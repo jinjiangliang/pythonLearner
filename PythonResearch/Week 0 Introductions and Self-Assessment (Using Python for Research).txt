@@ -1,0 +1,84 @@
+Week 0: Introductions and Self-Assessment20180813https://courses.edx.orgHarvardX: PH526xUsing Python for ResearchPython 安装https://www.anaconda.com/download/#windows下载In filming this course, we primarily used the Anaconda Python distribution. There are other Python distributions that would also work for this course, such as the Enthought Python distribution. More information about downloading and setting up these distributions can be found at the links above.//f the pre-quiz contains too much unfamiliar material, we suggest you take an introductory Python programming course first. For your reference, the mean score on the pre-quiz among participants in the previous version of this course was 86%. Examples of introductory Python courses include (among many other excellent courses as well!):
+
+		* Introduction to Computer Science and Programming Using Python
+		* Introduction to Python for Data Science
+		* CS For All: Introduction to Computer Science and Python Programming
+		* Introduction to Computing Using Python
+
+//Consider the following code:
+import math print(math.cos(math.pi)) -1.0What type of object is math.pi ?float (real number)//math.pi is an floating point approximation to π (a real number).//import math print(math.cos(math.pi)) -1.0what type of object is math.cos ?function//math.cos takes in numeric values (in radians) as input and returns its cosine as output.//3）Consider the following code:
+nums = set([1, 1, 2, 2, 3, 3, 3, 4]) print(len(nums))What does this return?Although the list contains 8 elements, a set only contains unique elements, eliminating one 1, one 2, and two 3s. Casting the list as a set eliminates repeats, leaving only {1,2,3,4} , containing 4 elements.//4）Consider the following code:a=[1,2,3]a[1]=4What is a ?//[1,4,3]ExplanationThe second line calls the 1st index of the list, where 0 is the most basic element. The equals sign is used for assignment, so 4 is assigned to the position 1 in the list.//4) Consider the following code:a=(1,2,3)a[1]=4What is a ?This code contains an error.//Because a is defined with parentheses, it is a tuple, which is immutable (cannot be altered).immutable: unchanging over time or unable to be changed.//Consider the following code and output:
+a = [1,2,3] b = a a == b Truea is b True b = a[:] a == b Truea is b FalseWhy is the last statement false?
+a and b refer to different objects that have identical content.
+//
+For mutables, 变量
+= makes the right object refer to the left one. In contrast, the Python shortcut with indexing ": " makes a new copy of a mutable with its containing elements. Therefore, a and b are different objects, but each with the same elements.
+//
+Again consider the code:
+x = "Hello, world!"
+y = x[5:]
+What is the value of y ?
+//
+This indexing returns all characters in the position 5 or later.
+//
+Again consider the code:
+y = [x**2 for x in range(5)]
+What is the value of y ?
+//
+[0, 1, 4, 9, 16]
+//
+This is an example of a list comprehension, in which a list is created containing elements specified in the inside expression (i.e., x**2 ), performed for each element in the iterable (i.e., range(5) ).
+//
+Consider the following code and output:
+x = 1
+def my_function():
+  x = 2
+  print(x)
+print(x)
+my_function()
+print(x)
+//
+1; 2; 1
+//
+Let's say you want to flip a coin until you get 10 heads. Should you use a for loop or while loop?
+A while loop
+//
+Let's say you want to flip a coin 10 times and count the number of heads. Should you use a for loop or a while loop?
+A for loop
+//
+Q12)
+Consider the following code and output:
+x = 1
+while x < 5:
+  x *= 2
+What is the final value of x ?
+// 8
+Consider the following code and output:
+for integer in (-1,3,5):
+  if integer < 0:
+   print("negative")
+  else:
+   print("non-negative")
+How many lines of text does this print?
+3
+Explanation
+This code will print either "negative" or "non-negative" for each element in the tuple, of which there are three total.
+//
+Q13) Which data structure would best represent average latitude and longitude for each city in a group of cities, accessible by city name?
+A dict with string city name keys and tuple latitude/longitude values.
+//
+A dict allows for values to be of any type, with keys that are immutable. A natural choice for city names is strings, and their latitude and longitude can be represented by an iterable (such as a tuple ), making a dict an appropriate data type.
+//
+Q15) Consider the following code and output:
+x = 'String'
+y = 10
+z = 5.0
+print(x + x) # print command 1
+print(y + y) # print command 2
+print(y + x) # print command 3
+print(y + z) # print command 4
+Which of the following print commands will work?
+1；2；4
+Explanation
+Addition (+ ) is polymorphic for two strings, and pairs of many numeric types. However, + is not defined for strings and numeric values.
+//
